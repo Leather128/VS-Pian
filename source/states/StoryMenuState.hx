@@ -287,7 +287,7 @@ class StoryMenuState extends MusicBeatState
 			switch (curDifficulty)
 			{
 				case 0:
-					diffic = '-easy';
+					diffic = '-trolling';
 				case 2:
 					diffic = '-hard';
 			}
