@@ -1,0 +1,18 @@
+<TextureAtlas imagePath="spooky_kids.png">
+    <SubTexture name="spooky dance idle BLACK LINES0000" x="493" y="0" width="381" height="549"/>
+    <SubTexture name="spooky dance idle BLACK LINES0001" x="1255" y="0" width="381" height="549"/>
+    <SubTexture name="spooky dance idle BLACK LINES0002" x="1255" y="1045" width="379" height="541"/>
+    <SubTexture name="spooky dance idle BLACK LINES0003" x="875" y="0" width="379" height="541"/>
+    <SubTexture name="spooky dance idle BLACK LINES0004" x="1198" y="1591" width="357" height="484"/>
+    <SubTexture name="spooky dance idle BLACK LINES0005" x="493" y="550" width="357" height="484"/>
+    <SubTexture name="spooky dance idle BLACK LINES0006" x="875" y="542" width="354" height="494"/>
+    <SubTexture name="spooky dance idle BLACK LINES0007" x="493" y="1058" width="354" height="494"/>
+    <SubTexture name="spooky dance idle BLACK LINES0008" x="0" y="1058" width="492" height="532"/>
+    <SubTexture name="spooky dance idle BLACK LINES0009" x="0" y="525" width="492" height="532"/>
+    <SubTexture name="spooky dance idle BLACK LINES0010" x="0" y="1591" width="481" height="524"/>
+    <SubTexture name="spooky dance idle BLACK LINES0011" x="0" y="0" width="481" height="524"/>
+    <SubTexture name="spooky dance idle BLACK LINES0012" x="482" y="1591" width="357" height="484"/>
+    <SubTexture name="spooky dance idle BLACK LINES0013" x="840" y="1591" width="357" height="484"/>
+    <SubTexture name="spooky dance idle BLACK LINES0014" x="1255" y="550" width="354" height="494"/>
+    <SubTexture name="spooky dance idle BLACK LINES0015" x="848" y="1058" width="354" height="494"/>
+</TextureAtlas>

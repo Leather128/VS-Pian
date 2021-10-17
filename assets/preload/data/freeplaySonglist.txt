@@ -1,0 +1,7 @@
+Certainly NOT Tutorial:dad:0:Easy,Normal,Hard:#471700
+Plain:dad:1:Easy,Normal,Hard:#471700
+Pian:dad:1:Easy,Normal,Hard:#471700
+Deez:dad:1:Easy,Normal,Hard:#471700
+Bonus:dad:2:Easy,Normal,Hard:#471700
+WTF:dad:2:Easy,Normal,Hard:#471700
+Changle:pico:2:Easy,Normal,Hard:#379ED9

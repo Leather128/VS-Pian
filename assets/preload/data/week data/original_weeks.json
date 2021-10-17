@@ -1,0 +1,34 @@
+{
+    "groupName": "Original Weeks",
+    "pathName": "default",
+    "weeks": [
+        {
+            "imagePath": "tutorial",
+            "songs": [
+                "Certainly NOT Tutorial"
+            ],
+            "characters": [
+                "dad",
+                "bf",
+                "gf"
+            ],
+            "weekTitle": "gthreoihgtuhwresihugresiugrewhoiu",
+            "backgroundColor":[249, 207, 81]
+        },
+        {
+            "imagePath": "week1",
+            "songs": [
+                "Plain",
+                "Pian",
+                "Deez"
+            ],
+            "characters": [
+                "dad",
+                "bf",
+                "gf"
+            ],
+            "weekTitle": "iS tHaT pIaN fRoM fNf?!??!?!?!?!?!?!?!?!?!?!?!?!?",
+            "backgroundColor":[249, 207, 81]
+        }
+    ]
+}
