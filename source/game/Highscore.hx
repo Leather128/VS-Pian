@@ -13,7 +13,7 @@ class Highscore
 	public static var songRanks:Map<String, String> = new Map<String, String>();
 	#end
 
-	public static function saveScore(song:String, score:Int = 0, ?diff:String = "easy"):Void
+	public static function saveScore(song:String, score:Int = 0, ?diff:String = "trolling"):Void
 	{
 		var daSong:String = formatSong(song, diff);
 
@@ -26,7 +26,7 @@ class Highscore
 			setScore(daSong, score);
 	}
 
-	public static function saveRank(song:String, rank:String = "N/A", ?diff:String = "easy"):Void
+	public static function saveRank(song:String, rank:String = "N/A", ?diff:String = "trolling"):Void
 	{
 		var daSong:String = formatSong(song, diff);
 
@@ -39,7 +39,7 @@ class Highscore
 			setRank(daSong, rank);
 	}
 
-	public static function saveWeekScore(week:Int = 1, score:Int = 0, ?diff:String = "easy", ?weekName:String = 'week'):Void
+	public static function saveWeekScore(week:Int = 1, score:Int = 0, ?diff:String = "trolling", ?weekName:String = 'week'):Void
 	{
 		var daWeek:String = formatSong(weekName + week, diff);
 
