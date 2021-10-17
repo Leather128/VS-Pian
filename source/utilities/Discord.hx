@@ -31,15 +31,15 @@ class DiscordClient
 
 		active = true;
 
-		while (active)
+		while(active)
 		{
 			DiscordRpc.process();
 			sleep(2);
 		}
 
 		if(active)
-			DiscordRpc.shutdown();
-
+			shutdown();
+		
 		active = false;
 	}
 
@@ -55,8 +55,8 @@ class DiscordClient
 		DiscordRpc.presence({
 			details: "In the Menus",
 			state: null,
-			largeImageKey: 'logo',
-			largeImageText: "Leather Funkin' Engine"
+			largeImageKey: 'icon',
+			largeImageText: "VS Pian"
 		});
 	}
 
@@ -93,8 +93,8 @@ class DiscordClient
 		DiscordRpc.presence({
 			details: details,
 			state: state,
-			largeImageKey: 'logo',
-			largeImageText: "Leather Funkin' Engine",
+			largeImageKey: 'icon',
+			largeImageText: "VS Pian",
 			smallImageKey : smallImageKey,
 			// Obtained times are in milliseconds so they are divided so Discord can use it
 			startTimestamp : Std.int(startTimestamp / 1000),
