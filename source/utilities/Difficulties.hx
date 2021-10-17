@@ -2,7 +2,7 @@ package utilities;
 
 enum Difficulty
 {
-    Easy;
+    Trolling;
     Normal;
     Hard;
     Undefined;
@@ -17,7 +17,7 @@ class Difficulties
         switch(number)
         {
             case 0:
-                selected_Difficulty = Easy;
+                selected_Difficulty = Trolling;
             case 1:
                 selected_Difficulty = Normal;
             case 2:
@@ -33,7 +33,7 @@ class Difficulties
 
         switch(string.toLowerCase())
         {
-            case 'easy':
+            case 'trolling':
                 selected_Difficulty = 0;
             case 'normal':
                 selected_Difficulty = 1;
