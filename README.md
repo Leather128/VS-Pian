@@ -1,4 +1,4 @@
-# VS Pian
+![VS Pian Logo](art/RPC Logo.png)
 
 This is the repository for VS Pian, a mod created as a joke that just spams notes I think lol.
 
