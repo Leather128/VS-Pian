@@ -107,7 +107,7 @@ class Character extends FlxSprite
 				cameraOffset = [50,0];
 			case '':
 				trace("NO VALUE THINGY LOL DONT LOAD SHIT");
-				deathCharacter = "";
+				deathCharacter = "bf-dead";
 				icon = "bf-old";
 
 			default:
