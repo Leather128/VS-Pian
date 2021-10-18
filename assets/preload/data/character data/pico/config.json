@@ -1,0 +1,40 @@
+{
+    "defaultFlipX": true,
+    "dancesLeftAndRight": false,
+    "imagePath": "Pico_FNF_assetss",
+    "spritesheetType": "SPARROW",
+    "barColor": [55, 158, 217],
+    "cameraOffset": [50,0],
+    "animations": [
+        {
+            "name": "idle",
+            "animation_name": "Pico Idle Dance",
+            "fps": 24,
+            "looped": false
+        },
+        {
+            "name": "singLEFT",
+            "animation_name": "Pico Note Right0",
+            "fps": 24,
+            "looped": false
+        },
+        {
+            "name": "singDOWN",
+            "animation_name": "Pico Down Note0",
+            "fps": 24,
+            "looped": false
+        },
+        {
+            "name": "singUP",
+            "animation_name": "pico Up note0",
+            "fps": 24,
+            "looped": false
+        },
+        {
+            "name": "singRIGHT",
+            "animation_name": "Pico NOTE LEFT0",
+            "fps": 24,
+            "looped": false
+        }
+    ]
+}

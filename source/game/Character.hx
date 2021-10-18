@@ -62,61 +62,20 @@ class Character extends FlxSprite
 
 		var ilikeyacutg:Bool = false;
 
-		switch (curCharacter)
+		if(curCharacter == "")
 		{
-			case 'dad':
-				// DAD ANIMATION LOADING CODE
-				frames = Paths.getSparrowAtlas('characters/DADDY_DEAREST', 'shared');
-				animation.addByPrefix('idle', 'Dad idle dance', 24, false);
-				animation.addByPrefix('singUP', 'Dad Sing Note UP', 24, false);
-				animation.addByPrefix('singRIGHT', 'Dad Sing Note RIGHT', 24, false);
-				animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24, false);
-				animation.addByPrefix('singLEFT', 'Dad Sing Note LEFT', 24, false);
+			trace("NO VALUE THINGY LOL DONT LOAD SHIT");
+			deathCharacter = "bf-dead";
+			icon = "bf-old";
+		}
+		else
+		{
+			if (isPlayer)
+				flipX = !flipX;
 
-				playAnim('idle');
-				barColor = FlxColor.fromRGB(71, 23, 0);
-			case 'pico':
-				frames = Paths.getSparrowAtlas('characters/Pico_FNF_assetss', 'shared');
-				animation.addByPrefix('idle', "Pico Idle Dance", 24);
-				animation.addByPrefix('singUP', 'pico Up note0', 24, false);
-				animation.addByPrefix('singDOWN', 'Pico Down Note0', 24, false);
-
-				if (isPlayer)
-				{
-					animation.addByPrefix('singLEFT', 'Pico NOTE LEFT0', 24, false);
-					animation.addByPrefix('singRIGHT', 'Pico Note Right0', 24, false);
-					animation.addByPrefix('singRIGHTmiss', 'Pico Note Right Miss', 24, false);
-					animation.addByPrefix('singLEFTmiss', 'Pico NOTE LEFT miss', 24, false);
-				}
-				else
-				{
-					// Need to be flipped! REDO THIS LATER!
-					animation.addByPrefix('singLEFT', 'Pico Note Right0', 24, false);
-					animation.addByPrefix('singRIGHT', 'Pico NOTE LEFT0', 24, false);
-					animation.addByPrefix('singRIGHTmiss', 'Pico NOTE LEFT miss', 24, false);
-					animation.addByPrefix('singLEFTmiss', 'Pico Note Right Miss', 24, false);
-				}
-
-				animation.addByPrefix('singUPmiss', 'pico Up note miss', 24);
-				animation.addByPrefix('singDOWNmiss', 'Pico Down Note MISS', 24);
-
-				playAnim('idle');
-
-				flipX = true;
-				barColor = FlxColor.fromRGB(55, 158, 217);
-				cameraOffset = [50,0];
-			case '':
-				trace("NO VALUE THINGY LOL DONT LOAD SHIT");
-				deathCharacter = "bf-dead";
-				icon = "bf-old";
-
-			default:
-				if (isPlayer)
-					flipX = !flipX;
-
-				ilikeyacutg = true;
-				
-				loadNamedConfiguration(curCharacter);
+			ilikeyacutg = true;
+			
+			loadNamedConfiguration(curCharacter);
 		}
 
 		if (isPlayer && !ilikeyacutg)
