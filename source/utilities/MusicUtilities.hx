@@ -1,7 +1,5 @@
 package utilities;
 
-import flixel.FlxG;
-
 class MusicUtilities
 {
 
@@ -10,14 +8,6 @@ class MusicUtilities
     */
     public static function GetTitleMusicPath():String
     {
-        if (FlxG.save.data.oldTitle)
-            return Paths.music('title');
-        else
-            if (Date.now().getDay() == 5 && Date.now().getHours() >= 18 || FlxG.save.data.nightMusic)
-                return Paths.music('freakyNightMenu');
-            else
-                return Paths.music('freakyMenu');
-
         return Paths.music('freakyMenu');
     }
 
@@ -26,6 +16,6 @@ class MusicUtilities
     */
     public static function GetOptionsMenuMusic():String
     {
-        return Paths.music('optionsMenu');
+        return Paths.music('freakyMenu');
     }
 }
