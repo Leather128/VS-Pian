@@ -4,7 +4,7 @@
     "imagePath": "Pico_FNF_assetss",
     "spritesheetType": "SPARROW",
     "barColor": [55, 158, 217],
-    "cameraOffset": [50,0],
+    "cameraOffset": [150,0],
     "animations": [
         {
             "name": "idle",
