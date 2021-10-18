@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="VS Pian" file="VS Pian" packageName="com.firey7k.vspian" package="com.firey7k.vspian" main="Main" version="4" company="leather128portersinc" />
+	<app title="VS Pian" file="VS Pian" packageName="com.firey7k.vspian" package="com.firey7k.vspian" main="Main" version="5" company="leather128portersinc" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
