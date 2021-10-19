@@ -19,6 +19,7 @@ typedef Cutscene = {
     var dialogueSections:Array<DialogueSection>;
     var dialogueMusic:String;
     var dialogueSound:String;
+    var dialogueBox:String;
 }
 
 typedef DialogueSection = {
@@ -31,7 +32,7 @@ typedef DialogueSection = {
 
     var dialogue:DialogueText;
 
-    var box:DialogueObject;
+    var box_Anim:String;
 
     var has_Hand:Bool;
     var hand_Sprite:DialogueObject;
