@@ -197,6 +197,8 @@ class PlayState extends MusicBeatState
 
 	var cutscene:Cutscene;
 
+	public static var fromPauseMenu:Bool = false;
+
 	override public function create()
 	{
 		if(FlxG.save.data.bot)
@@ -543,7 +545,7 @@ class PlayState extends MusicBeatState
 
 		startingSong = true;
 
-		playCutsceneLmao = (isStoryMode && FlxG.save.data.cutscenePlays == "story") || (!isStoryMode && FlxG.save.data.cutscenePlays == "freeplay") || (FlxG.save.data.cutscenePlays == "both");
+		playCutsceneLmao = ((isStoryMode && FlxG.save.data.cutscenePlays == "story") || (!isStoryMode && FlxG.save.data.cutscenePlays == "freeplay") || (FlxG.save.data.cutscenePlays == "both")) && !fromPauseMenu;
 
 		if (playCutsceneLmao)
 		{
@@ -592,6 +594,8 @@ class PlayState extends MusicBeatState
 			luaModchart.executeState('start', [PlayState.SONG.song.toLowerCase()]);
 		}
 		#end
+
+		fromPauseMenu = false;
 
 		super.create();
 	}
