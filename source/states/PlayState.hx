@@ -1,8 +1,13 @@
 package states;
 
+#if polymod
+import polymod.backends.PolymodAssets;
+#end
 import game.Cutscene;
 import modding.FlxVideo;
+#if sys
 import sys.FileSystem;
+#end
 import game.NoteSplash;
 import flixel.graphics.frames.FlxFramesCollection;
 import flixel.tweens.misc.VarTween;
@@ -54,7 +59,6 @@ import modding.CharacterConfig;
 
 #if desktop
 import utilities.Discord.DiscordClient;
-import polymod.backends.PolymodAssets;
 #end
 
 using StringTools;
@@ -703,7 +707,11 @@ class PlayState extends MusicBeatState
 	public function startVideo(name:String, ?ext:String):Void {
 		#if VIDEOS_ALLOWED
 		var foundFile:Bool = false;
+		#if sys
 		var fileName:String = Sys.getCwd() + PolymodAssets.getPath(Paths.video(name, ext));
+		#else
+		var fileName:String = PolymodAssets.getPath(Paths.video(name, ext));
+		#end
 
 		#if sys
 		if(FileSystem.exists(fileName)) {
@@ -717,7 +725,7 @@ class PlayState extends MusicBeatState
 			#if sys
 			if(FileSystem.exists(fileName)) {
 			#else
-			if(OpenFlAssets.exists(fileName)) {
+			if(openfl.utils.Assets.exists(fileName)) {
 			#end
 				foundFile = true;
 			}

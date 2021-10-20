@@ -8,6 +8,8 @@ import lime.tools.AssetType;
 import modding.ModdingSound;
 import sys.FileSystem;
 import polymod.fs.PolymodFileSystem;
+#end
+#if polymod
 import polymod.backends.PolymodAssets;
 #end
 import utilities.Difficulties;
@@ -469,7 +471,7 @@ class ChartingState extends MusicBeatState
 		});
 
 		// dropdown lmao
-		var arrow_Types = CoolUtil.coolTextFilePolymod(Paths.txt("arrowTypes"));
+		var arrow_Types = CoolUtil.coolTextFile(Paths.txt("arrowTypes"));
 
 		var typeDropDown = new FlxUIDropDownMenuCustom(setCharacterLeftSide.x, setCharacterLeftSide.y + setCharacterLeftSide.height, FlxUIDropDownMenuCustom.makeStrIdLabelArray(arrow_Types, true), function(type:String)
 		{
@@ -1125,19 +1127,9 @@ class ChartingState extends MusicBeatState
 	function loadHealthIconFromCharacter(char:String) {
 		var characterPath:String = 'character data/' + char + '/config';
 
-		#if polymod
-		var path:String = Paths.json(characterPath);
-
-		if (!PolymodAssets.exists(path)) {
-			path = Paths.json('character data/bf/config');
-		}
-
-		if (!FileSystem.exists(path))
-		#else
 		var path:String = Paths.json(characterPath);
 
 		if (!Assets.exists(path))
-		#end
 		{
 			path = Paths.json('character data/bf/config');
 		}

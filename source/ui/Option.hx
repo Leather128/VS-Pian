@@ -1,7 +1,9 @@
 package ui;
 
 import substates.MaxFPSMenu;
+#if discord_rpc
 import utilities.Discord.DiscordClient;
+#end
 import polymod.Polymod.ModMetadata;
 import modding.ModList;
 import substates.SongOffsetMenu;
@@ -188,10 +190,12 @@ class BoolOption extends Option
 			case "discordRPC":
 				FlxG.save.data.discordRPC = !Option_Checked;
 
+				#if discord_rpc
 				if(FlxG.save.data.discordRPC && !DiscordClient.active)
 					DiscordClient.initialize();
 				else if(!FlxG.save.data.discordRPC && DiscordClient.active)
 					DiscordClient.shutdown();
+				#end
 			case "quickRestart":
 				FlxG.save.data.quickRestart = !Option_Checked;
 		}

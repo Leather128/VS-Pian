@@ -249,9 +249,7 @@ class TitleState extends MusicBeatState
 
 	function getIntroTextShit():Array<Array<String>>
 	{
-		var fullText:String = Assets.getText(Paths.txt('introText'));
-
-		var firstArray:Array<String> = fullText.split('\n');
+		var firstArray:Array<String> = CoolUtil.coolTextFile(Paths.txt('introText'));
 		var swagGoodArray:Array<Array<String>> = [];
 
 		for (i in firstArray)

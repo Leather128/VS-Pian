@@ -1,7 +1,8 @@
 package states;
 
-import ui.ModIcon;
+#if sys
 #if polymod
+import ui.ModIcon;
 import modding.ModList;
 import modding.PolymodHandler;
 import substates.UISkinSelect;
@@ -120,4 +121,5 @@ class ModsMenu extends MusicBeatState
 		}
 	}
 }
+#end
 #end

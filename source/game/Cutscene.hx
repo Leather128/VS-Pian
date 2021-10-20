@@ -1,5 +1,6 @@
 package game;
 
+import lime.utils.Assets;
 import haxe.Json;
 #if polymod
 import polymod.backends.PolymodAssets;

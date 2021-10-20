@@ -1,10 +1,5 @@
 package states;
 
-import sys.thread.Thread;
-import cpp.FILE;
-import sys.io.FileInput;
-import sys.FileSystem;
-import sys.io.File;
 import lime.app.Application;
 import utilities.Ratings.SongRank;
 import openfl.utils.ByteArray;
@@ -21,8 +16,15 @@ import ui.Alphabet;
 import utilities.Discord.DiscordClient;
 #end
 #if sys
+import sys.thread.Thread;
 import polymod.Polymod;
 import polymod.backends.PolymodAssets;
+import sys.io.FileInput;
+import sys.FileSystem;
+import sys.io.File;
+#end
+#if cpp
+import cpp.FILE;
 #end
 import flash.text.TextField;
 import flixel.FlxG;

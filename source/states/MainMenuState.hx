@@ -34,8 +34,10 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
+		#if sys
 		if(PolymodHandler.metadataArrays.length > 0)
 			optionShit.push('mods');
+		#end
 		
 		optionShit.push('options');
 
@@ -177,8 +179,10 @@ class MainMenuState extends MusicBeatState
 									FlxTransitionableState.skipNextTransOut = true;
 									FlxG.switchState(new OptionsMenu());
 
+								#if sys
 								case 'mods':
 									FlxG.switchState(new ModsMenu());
+								#end
 							}
 						});
 					}

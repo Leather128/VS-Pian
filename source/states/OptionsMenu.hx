@@ -63,7 +63,9 @@ class OptionsMenu extends MusicBeatState
 			new BoolOption("Note Accuracy Text", "msText", FlxG.save.data.msText, 2),
 			new BoolOption("FPS Counter", "fpsCounter", FlxG.save.data.fpsCounter, 3),
 			new BoolOption("Memory Counter", "memoryCounter", FlxG.save.data.memoryCounter, 4),
+			#if desktop
 			new MaxFPSOption("Max FPS", 5),
+			#end
 			new UISkinSelectOption("UI Skin", 6)
 		],
 		[
@@ -81,7 +83,9 @@ class OptionsMenu extends MusicBeatState
 			new BoolOption("Friday-Night Title Music", "nightMusic", FlxG.save.data.nightMusic, 2),
 			//new BoolOption("Watermarks", "watermarks", FlxG.save.data.watermarks, 3),
 			new BoolOption("Freeplay Music", "freeplayMusic", FlxG.save.data.freeplayMusic, 4),
+			#if discord_rpc
 			new BoolOption("Discord RPC", "discordRPC", FlxG.save.data.discordRPC, 5),
+			#end
 			new CutsceneOption("Cutscenes Play On", ["story","freeplay","both"], FlxG.save.data.cutscenePlays, 6)
 		]
 	];
