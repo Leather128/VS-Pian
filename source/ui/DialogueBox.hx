@@ -46,55 +46,49 @@ class DialogueBox extends FlxSpriteGroup
 		super();
 
 		loadAssets();
-
-		// yea
-		new FlxTimer().start(1,function(_){starting = false;});
 	}
 
 	override function update(elapsed:Float)
 	{
-		if(!starting)
+		if(dialogue_Shadow != null)
+			dialogue_Shadow.text = dialogue.text;
+
+		if(FlxG.keys.justPressed.ENTER)
 		{
-			if(dialogue_Shadow != null)
-				dialogue_Shadow.text = dialogue.text;
-	
-			if(FlxG.keys.justPressed.ENTER)
+			FlxG.sound.play(Paths.sound('clickText'), 0.8);
+
+			section_Index++;
+
+			if(section_Index < cutscene_Data.dialogueSections.length)
+				loadAssets();
+			else
 			{
-				FlxG.sound.play(Paths.sound('clickText'), 0.8);
-	
-				section_Index++;
-	
-				if(section_Index < cutscene_Data.dialogueSections.length)
-					loadAssets();
-				else
+				if(!exiting)
 				{
-					if(!exiting)
+					exiting = true;
+
+					new FlxTimer().start(0.2, function(tmr:FlxTimer)
 					{
-						exiting = true;
+						portraitLeft.visible = false;
+						portraitRight.visible = false;
 	
-						new FlxTimer().start(0.2, function(tmr:FlxTimer)
-						{
-							portraitLeft.visible = false;
-							portraitRight.visible = false;
-		
-							box.alpha -= 1 / 5;
-		
-							if(dialogue != null)
-								dialogue.alpha -= 1 / 5;
-		
-							if(dialogue_Shadow != null)
-								dialogue_Shadow.alpha = dialogue.alpha;
-		
-							if(alphabet != null)
-								alphabet.alpha -= 1 / 5;
-						}, 5);
-		
-						new FlxTimer().start(1.2, function(tmr:FlxTimer)
-						{
-							finish_Function();
-							kill();
-						});
-					}
+						box.alpha -= 1 / 5;
+	
+						if(dialogue != null)
+							dialogue.alpha -= 1 / 5;
+	
+						if(dialogue_Shadow != null)
+							dialogue_Shadow.alpha = dialogue.alpha;
+	
+						if(alphabet != null)
+							alphabet.alpha -= 1 / 5;
+					}, 5);
+	
+					new FlxTimer().start(1.2, function(tmr:FlxTimer)
+					{
+						finish_Function();
+						kill();
+					});
 				}
 			}
 		}
@@ -197,22 +191,13 @@ class DialogueBox extends FlxSpriteGroup
 		add(box);
 
 		if(dialogue_Shadow != null)
-		{
 			remove(dialogue_Shadow);
-			dialogue_Shadow.destroy();
-		}
 
 		if(dialogue != null)
-		{
 			remove(dialogue);
-			dialogue.destroy();
-		}
 
 		if(alphabet != null)
-		{
 			remove(alphabet);
-			alphabet.destroy();
-		}
 
 		if(!current_Section.dialogue.alphabet)
 		{

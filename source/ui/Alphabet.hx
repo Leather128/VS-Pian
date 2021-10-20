@@ -136,79 +136,82 @@ class Alphabet extends FlxSpriteGroup
 		{
 			new FlxTimer().start(0.05 + (0.05 * loopNum), function(tmr:FlxTimer)
 			{
-				if (_finalText.charCodeAt(loopNum) == "\n".code)
+				if(this != null && this.active && this.visible && this.alpha != 0)
 				{
-					yMulti += 1;
-					xPosResetted = true;
-					xPos = 0;
-					curRow += 1;
-				}
-
-				if (splitWords[loopNum - 1] == " ")
-				{
-					lastWasSpace = true;
-				}
-
-				#if (haxe >= "4.0.0")
-				var isNumber:Bool = AlphaCharacter.numbers.contains(splitWords[loopNum]);
-				var isSymbol:Bool = AlphaCharacter.symbols.contains(splitWords[loopNum]);
-				#else
-				var isNumber:Bool = AlphaCharacter.numbers.indexOf(splitWords[loopNum]) != -1;
-				var isSymbol:Bool = AlphaCharacter.symbols.indexOf(splitWords[loopNum]) != -1;
-				#end
-
-				#if (haxe >= "4.0.0")
-				var canDoThingyLol:Bool = (!isBold && AlphaCharacter.alphabet.contains(splitWords[loopNum].toLowerCase()) || isBold && AlphaCharacter.boldalphabet.contains(splitWords[loopNum].toLowerCase()) || isNumber || isSymbol);
-				#else
-				var canDoThingyLol:Bool = (!isBold && AlphaCharacter.alphabet.indexOf(splitWords[loopNum].toLowerCase()) != -1 || isBold && AlphaCharacter.boldalphabet.indexOf(splitWords[loopNum].toLowerCase()) != -1 || isNumber || isSymbol);
-				#end
-
-				if (canDoThingyLol)
-				{
-					if (lastSprite != null && !xPosResetted)
+					if (_finalText.charCodeAt(loopNum) == "\n".code)
 					{
-						lastSprite.updateHitbox();
-						xPos += lastSprite.width + 3;
+						yMulti += 1;
+						xPosResetted = true;
+						xPos = 0;
+						curRow += 1;
 					}
-					else
+	
+					if (splitWords[loopNum - 1] == " ")
 					{
-						xPosResetted = false;
+						lastWasSpace = true;
 					}
-
-					if (lastWasSpace)
+	
+					#if (haxe >= "4.0.0")
+					var isNumber:Bool = AlphaCharacter.numbers.contains(splitWords[loopNum]);
+					var isSymbol:Bool = AlphaCharacter.symbols.contains(splitWords[loopNum]);
+					#else
+					var isNumber:Bool = AlphaCharacter.numbers.indexOf(splitWords[loopNum]) != -1;
+					var isSymbol:Bool = AlphaCharacter.symbols.indexOf(splitWords[loopNum]) != -1;
+					#end
+	
+					#if (haxe >= "4.0.0")
+					var canDoThingyLol:Bool = (!isBold && AlphaCharacter.alphabet.contains(splitWords[loopNum].toLowerCase()) || isBold && AlphaCharacter.boldalphabet.contains(splitWords[loopNum].toLowerCase()) || isNumber || isSymbol);
+					#else
+					var canDoThingyLol:Bool = (!isBold && AlphaCharacter.alphabet.indexOf(splitWords[loopNum].toLowerCase()) != -1 || isBold && AlphaCharacter.boldalphabet.indexOf(splitWords[loopNum].toLowerCase()) != -1 || isNumber || isSymbol);
+					#end
+	
+					if (canDoThingyLol)
 					{
-						xPos += 20;
-						lastWasSpace = false;
-					}
-
-					var letter:AlphaCharacter = new AlphaCharacter(xPos, 55 * yMulti);
-					letter.row = curRow;
-
-					if (isBold)
-					{
-						letter.createBold(splitWords[loopNum]);
-					}
-					else
-					{
-						if (isNumber)
+						if (lastSprite != null && !xPosResetted)
 						{
-							letter.createNumber(splitWords[loopNum]);
-						}
-						else if (isSymbol)
-						{
-							letter.createSymbol(splitWords[loopNum]);
+							lastSprite.updateHitbox();
+							xPos += lastSprite.width + 3;
 						}
 						else
 						{
-							letter.createLetter(splitWords[loopNum]);
+							xPosResetted = false;
 						}
-
-						letter.x += 90;
+	
+						if (lastWasSpace)
+						{
+							xPos += 20;
+							lastWasSpace = false;
+						}
+	
+						var letter:AlphaCharacter = new AlphaCharacter(xPos, 55 * yMulti);
+						letter.row = curRow;
+	
+						if (isBold)
+						{
+							letter.createBold(splitWords[loopNum]);
+						}
+						else
+						{
+							if (isNumber)
+							{
+								letter.createNumber(splitWords[loopNum]);
+							}
+							else if (isSymbol)
+							{
+								letter.createSymbol(splitWords[loopNum]);
+							}
+							else
+							{
+								letter.createLetter(splitWords[loopNum]);
+							}
+	
+							letter.x += 90;
+						}
+	
+						add(letter);
+	
+						lastSprite = letter;
 					}
-
-					add(letter);
-
-					lastSprite = letter;
 				}
 			});
 		}
@@ -319,9 +322,11 @@ class AlphaCharacter extends FlxSprite
 			case '<':
 				animation.addByPrefix(letter, 'less_than0', 24);
 				animation.play(letter);
+				y -= height;
 			default:
 				animation.addByPrefix(letter, letter + '0', 24);
 				animation.play(letter);
+				y -= height;
 		}
 
 		y += row * 60;

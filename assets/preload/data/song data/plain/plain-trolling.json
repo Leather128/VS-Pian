@@ -2,6 +2,7 @@
      "song" : {
          "player1" : "bf"
         ,"player2" : "dad"
+        ,"cutscene":"plain dialogue"
         ,"notes" : [
              {
                  "lengthInSteps" : 16
