@@ -19,7 +19,7 @@
             },
             "has_Hand": false,
             "dialogue": {
-                "text": "bro",
+                "text": "grrrrrrr",
                 "sound": "cutscene/pixelText",
                 "color": "#000000",
                 "hasShadow": false,
@@ -50,7 +50,85 @@
             },
             "has_Hand": false,
             "dialogue": {
-                "text": "who are you???",
+                "text": "ima turn into the god and make a\nspammy song like every oc in fnf",
+                "sound": "cutscene/pixelText",
+                "color": "#000000",
+                "hasShadow": false,
+                "size": 64,
+                "box_Offset": [30,120],
+                "alphabet": true
+            }
+        },
+        {
+            "side": "left",
+            "showOtherPortrait": true,
+            "leftPortrait": {
+                "sprite": "vspian/pian",
+                "x": 30,
+                "y": 100,
+                "antialiased": true
+            },
+            "rightPortrait": {
+                "sprite": "bf",
+                "x": 0,
+                "y": 100,
+                "antialiased": true
+            },
+            "has_Hand": false,
+            "dialogue": {
+                "text": "jk im not a loser",
+                "sound": "cutscene/pixelText",
+                "color": "#000000",
+                "hasShadow": false,
+                "size": 64,
+                "box_Offset": [30,120],
+                "alphabet": true
+            }
+        },
+        {
+            "side": "left",
+            "showOtherPortrait": true,
+            "leftPortrait": {
+                "sprite": "vspian/pian",
+                "x": 30,
+                "y": 100,
+                "antialiased": true
+            },
+            "rightPortrait": {
+                "sprite": "bf",
+                "x": 0,
+                "y": 100,
+                "antialiased": true
+            },
+            "has_Hand": false,
+            "dialogue": {
+                "text": "ima still make a hard song though\nlol",
+                "sound": "cutscene/pixelText",
+                "color": "#000000",
+                "hasShadow": false,
+                "size": 64,
+                "box_Offset": [30,120],
+                "alphabet": true
+            }
+        },
+        {
+            "side": "left",
+            "showOtherPortrait": true,
+            "leftPortrait": {
+                "sprite": "vspian/pian",
+                "x": 30,
+                "y": 100,
+                "antialiased": true
+            },
+            "rightPortrait": {
+                "sprite": "bf",
+                "x": 0,
+                "y": 100,
+                "antialiased": true
+            },
+            "has_Hand": false,
+            "dialogue": {
+                "text": "like every song in this mod",
                 "sound": "cutscene/pixelText",
                 "color": "#000000",
                 "hasShadow": false,
@@ -76,33 +154,7 @@
             },
             "has_Hand": false,
             "dialogue": {
-                "text": "your mom :)",
-                "sound": "cutscene/pixelText",
-                "color": "#000000",
-                "hasShadow": false,
-                "size": 64,
-                "box_Offset": [30,120],
-                "alphabet": true
-            }
-        },
-        {
-            "side": "left",
-            "showOtherPortrait": true,
-            "leftPortrait": {
-                "sprite": "vspian/pian",
-                "x": 30,
-                "y": 100,
-                "antialiased": true
-            },
-            "rightPortrait": {
-                "sprite": "bf",
-                "x": 0,
-                "y": 100,
-                "antialiased": true
-            },
-            "has_Hand": false,
-            "dialogue": {
-                "text": "the unfunny",
+                "text": "ok",
                 "sound": "cutscene/pixelText",
                 "color": "#000000",
                 "hasShadow": false,
@@ -128,163 +180,7 @@
             },
             "has_Hand": false,
             "dialogue": {
-                "text": "rapbattlerapbattlerapbattlerapbattle",
-                "sound": "cutscene/pixelText",
-                "color": "#000000",
-                "hasShadow": false,
-                "size": 64,
-                "box_Offset": [30,120],
-                "alphabet": true
-            }
-        },
-        {
-            "side": "left",
-            "showOtherPortrait": true,
-            "leftPortrait": {
-                "sprite": "vspian/pian",
-                "x": 30,
-                "y": 100,
-                "antialiased": true
-            },
-            "rightPortrait": {
-                "sprite": "bf",
-                "x": 0,
-                "y": 100,
-                "antialiased": true
-            },
-            "has_Hand": false,
-            "dialogue": {
-                "text": "what no im a piano",
-                "sound": "cutscene/pixelText",
-                "color": "#000000",
-                "hasShadow": false,
-                "size": 64,
-                "box_Offset": [30,120],
-                "alphabet": true
-            }
-        },
-        {
-            "side": "right",
-            "showOtherPortrait": true,
-            "leftPortrait": {
-                "sprite": "vspian/pian",
-                "x": 30,
-                "y": 100,
-                "antialiased": true
-            },
-            "rightPortrait": {
-                "sprite": "bf",
-                "x": 0,
-                "y": 100,
-                "antialiased": true
-            },
-            "has_Hand": false,
-            "dialogue": {
-                "text": "rapbattlerapbattlerapbattlerapbattle",
-                "sound": "cutscene/pixelText",
-                "color": "#000000",
-                "hasShadow": false,
-                "size": 64,
-                "box_Offset": [30,120],
-                "alphabet": true
-            }
-        },
-        {
-            "side": "left",
-            "showOtherPortrait": true,
-            "leftPortrait": {
-                "sprite": "vspian/pian",
-                "x": 30,
-                "y": 100,
-                "antialiased": true
-            },
-            "rightPortrait": {
-                "sprite": "bf",
-                "x": 0,
-                "y": 100,
-                "antialiased": true
-            },
-            "has_Hand": false,
-            "dialogue": {
-                "text": "stop",
-                "sound": "cutscene/pixelText",
-                "color": "#000000",
-                "hasShadow": false,
-                "size": 64,
-                "box_Offset": [30,120],
-                "alphabet": true
-            }
-        },
-        {
-            "side": "right",
-            "showOtherPortrait": true,
-            "leftPortrait": {
-                "sprite": "vspian/pian",
-                "x": 30,
-                "y": 100,
-                "antialiased": true
-            },
-            "rightPortrait": {
-                "sprite": "bf",
-                "x": 0,
-                "y": 100,
-                "antialiased": true
-            },
-            "has_Hand": false,
-            "dialogue": {
-                "text": "rapbattlerapbattlerapbattlerapbattle",
-                "sound": "cutscene/pixelText",
-                "color": "#000000",
-                "hasShadow": false,
-                "size": 64,
-                "box_Offset": [30,120],
-                "alphabet": true
-            }
-        },
-        {
-            "side": "left",
-            "showOtherPortrait": true,
-            "leftPortrait": {
-                "sprite": "vspian/pian",
-                "x": 30,
-                "y": 100,
-                "antialiased": true
-            },
-            "rightPortrait": {
-                "sprite": "bf",
-                "x": 0,
-                "y": 100,
-                "antialiased": true
-            },
-            "has_Hand": false,
-            "dialogue": {
-                "text": "ok fine",
-                "sound": "cutscene/pixelText",
-                "color": "#000000",
-                "hasShadow": false,
-                "size": 64,
-                "box_Offset": [30,120],
-                "alphabet": true
-            }
-        },
-        {
-            "side": "left",
-            "showOtherPortrait": true,
-            "leftPortrait": {
-                "sprite": "vspian/pian",
-                "x": 30,
-                "y": 100,
-                "antialiased": true
-            },
-            "rightPortrait": {
-                "sprite": "bf",
-                "x": 0,
-                "y": 100,
-                "antialiased": true
-            },
-            "has_Hand": false,
-            "dialogue": {
-                "text": "i do the battle",
+                "text": "wadasdadaswdasdwadwwddwdwwdasdasdwasdwasdwsadwasdwaasdwaddasdwsdwsadasdadasdwdadsdwadassdwdasdwdawsaswdaswdsawwsadwsdadasdadadadaddadasdadaswdasdddaaawdsdawwsaawwsssddddwasdadesadsdwsxzdsadaaswqwdasdwaszdwsadwasdadswdwasadasdwasdwasdadsadawsdwsadwsadwsadasdwasdaswdwdwdwdasadadwdsdadadsaadwassdsadawdwsadwsadwsdszadasdadswdasdwsadwszdsadsadw",
                 "sound": "cutscene/pixelText",
                 "color": "#000000",
                 "hasShadow": false,

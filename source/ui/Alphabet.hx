@@ -292,9 +292,12 @@ class AlphaCharacter extends FlxSprite
 
 	public function createNumber(letter:String):Void
 	{
-		animation.addByPrefix(letter, letter, 24);
+		animation.addByPrefix(letter, letter + "0", 24);
 		animation.play(letter);
 		updateHitbox();
+
+		y -= height;
+		y += row * 60;
 	}
 
 	public function createSymbol(letter:String)
