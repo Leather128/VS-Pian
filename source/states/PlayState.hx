@@ -547,92 +547,29 @@ class PlayState extends MusicBeatState
 
 		if (playCutsceneLmao)
 		{
-			/*
-			if(SONG.cutscene == null || SONG.cutscene == "")
+			if(SONG.cutscene != null && SONG.cutscene != "")
 			{
-				switch (curSong.toLowerCase())
+				cutscene = CutsceneUtil.loadFromJson(SONG.cutscene);
+
+				switch(cutscene.type.toLowerCase())
 				{
-					case "winter-horrorland":
-						var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
-						add(blackScreen);
-						blackScreen.scrollFactor.set();
-						camHUD.visible = false;
+					case "video":
+						startVideo(cutscene.videoPath, cutscene.videoExt);
 
-						new FlxTimer().start(0.1, function(tmr:FlxTimer)
-						{
-							remove(blackScreen);
-							FlxG.sound.play(Paths.sound('Lights_Turn_On'));
-							camFollow.y = -2050;
-							camFollow.x += 200;
-							FlxG.camera.focusOn(camFollow.getPosition());
-							FlxG.camera.zoom = 1.5;
+					case "dialogue":
+						var box:DialogueBox = new DialogueBox(cutscene);
+						box.scrollFactor.set();
+						box.finish_Function = startCountdown;
+						box.cameras = [camHUD];
 
-							new FlxTimer().start(0.8, function(tmr:FlxTimer)
-							{
-								camHUD.visible = true;
-								remove(blackScreen);
-								FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 2.5, {
-									ease: FlxEase.quadInOut,
-									onComplete: function(twn:FlxTween)
-									{
-										startCountdown();
-									}
-								});
-							});
-						});
-					case 'senpai':
-						var doof:DialogueBox = new DialogueBox(false);
-						doof.scrollFactor.set();
-						doof.finishThing = startCountdown;
-						doof.cameras = [camHUD];
+						startDialogue(box);
 
-						schoolIntro(doof);
-					case 'roses':
-						var doof:DialogueBox = new DialogueBox(false);
-						doof.scrollFactor.set();
-						doof.finishThing = startCountdown;
-						doof.cameras = [camHUD];
-						
-						FlxG.sound.play(Paths.sound('ANGRY'));
-						schoolIntro(doof);
-					case 'thorns':
-						var doof:DialogueBox = new DialogueBox(false);
-						doof.scrollFactor.set();
-						doof.finishThing = startCountdown;
-						doof.cameras = [camHUD];
-
-						schoolIntro(doof);
 					default:
 						startCountdown();
 				}
 			}
 			else
-			{*/
-				if(SONG.cutscene != null && SONG.cutscene != "")
-				{
-					cutscene = CutsceneUtil.loadFromJson(SONG.cutscene);
-
-					switch(cutscene.type.toLowerCase())
-					{
-						case "video":
-							startVideo(cutscene.videoPath, cutscene.videoExt);
-
-						case "dialogue":
-							/*
-							var doof:DialogueBox = new DialogueBox(cutscene);
-							doof.scrollFactor.set();
-							doof.finishThing = startCountdown;
-							doof.cameras = [camHUD];
-	
-							startDialogue(doof);*/
-
-						default:
-							startCountdown();
-					}
-				}
-				else
-					startCountdown();
-			//}
+				startCountdown();
 		}
 		else
 		{
@@ -813,7 +750,7 @@ class PlayState extends MusicBeatState
 
 	var startTimer:FlxTimer;
 
-	function startCountdown():Void
+	function startCountdown()
 	{
 		inCutscene = false;
 

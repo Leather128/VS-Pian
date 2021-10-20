@@ -18,7 +18,6 @@ typedef Cutscene = {
     /* DIALOGUE */
     var dialogueSections:Array<DialogueSection>;
     var dialogueMusic:String;
-    var dialogueSound:String;
     var dialogueBox:String;
 }
 
@@ -32,7 +31,11 @@ typedef DialogueSection = {
 
     var dialogue:DialogueText;
 
-    var box_Anim:String;
+    var box_Anim:Null<String>;
+    var box_Open:Null<String>;
+    var box_FPS:Null<Int>;
+    var open_Box:Null<Bool>;
+    var box_Antialiased:Null<Bool>;
 
     var has_Hand:Bool;
     var hand_Sprite:DialogueObject;
@@ -44,13 +47,13 @@ typedef DialogueObject = {
     var x:Float;
     var y:Float;
 
-    var scale:Float;
-    var antialiased:Bool;
+    var scale:Null<Float>;
+    var antialiased:Null<Bool>;
 
     // bru
     var animated:Bool;
     var anim_Name:String;
-    var fps:Int;
+    var fps:Null<Int>;
 }
 
 typedef DialogueText = {
@@ -64,6 +67,14 @@ typedef DialogueText = {
 
     var hasShadow:Bool;
     var shadowOffset:Float;
+
+    var size:Int;
+    var box_Offset:Array<Int>;
+
+    var alphabet:Null<Bool>;
+    var bold:Null<Bool>;
+
+    var text_Delay:Null<Float>;
 }
 
 class CutsceneUtil
