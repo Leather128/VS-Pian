@@ -1,6 +1,7 @@
 {
      "song" : {
          "player1" : "bf"
+        ,"cutscene": "pian dialogue"
         ,"notes" : [
              {
                  "sectionNotes" : [
