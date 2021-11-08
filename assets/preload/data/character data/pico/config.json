@@ -1,5 +1,5 @@
 {
-    "defaultFlipX": true,
+    "defaultFlipX": false,
     "dancesLeftAndRight": false,
     "imagePath": "changleremaster",
     "spritesheetType": "SPARROW",
