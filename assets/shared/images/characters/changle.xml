@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="changle.png">
+    <SubTexture name="changle idle0000" x="0" y="0" width="3004" height="3004" frameX="0" frameY="0" frameWidth="3004" frameHeight="3004" />
+    <SubTexture name="changle idle0001" x="3004" y="0" width="3004" height="3004" frameX="0" frameY="0" frameWidth="3004" frameHeight="3004" />
+    <SubTexture name="changle idle0002" x="0" y="3004" width="3004" height="3004" frameX="0" frameY="0" frameWidth="3004" frameHeight="3004" />
+    <SubTexture name="changle left0000" x="3004" y="3004" width="3004" height="3004" frameX="0" frameY="0" frameWidth="3004" frameHeight="3004" />
+    <SubTexture name="changle down0000" x="0" y="6008" width="3004" height="3004" frameX="0" frameY="0" frameWidth="3004" frameHeight="3004" />
+    <SubTexture name="changle up0000" x="3004" y="6008" width="3004" height="3004" frameX="0" frameY="0" frameWidth="3004" frameHeight="3004" />
+    <SubTexture name="changle right0000" x="0" y="9012" width="3004" height="3004" frameX="0" frameY="0" frameWidth="3004" frameHeight="3004" />
+</TextureAtlas>

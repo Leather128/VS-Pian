@@ -1,37 +1,37 @@
 {
     "defaultFlipX": false,
     "dancesLeftAndRight": false,
-    "imagePath": "DADDY_DEAREST",
+    "imagePath": "Remaster-Pian",
     "spritesheetType": "SPARROW",
     "barColor": [71, 23, 0],
     "animations": [
         {
             "name": "idle",
-            "animation_name": "Dad idle dance",
+            "animation_name": "Remaster-Pian idle",
             "fps": 24,
             "looped": false
         },
         {
             "name": "singLEFT",
-            "animation_name": "Dad Sing Note LEFT",
+            "animation_name": "Remaster-Pian left",
             "fps": 24,
             "looped": false
         },
         {
             "name": "singDOWN",
-            "animation_name": "Dad Sing Note DOWN",
+            "animation_name": "Remaster-Pian down",
             "fps": 24,
             "looped": false
         },
         {
             "name": "singUP",
-            "animation_name": "Dad Sing Note UP",
+            "animation_name": "Remaster-Pian up",
             "fps": 24,
             "looped": false
         },
         {
             "name": "singRIGHT",
-            "animation_name": "Dad Sing Note RIGHT",
+            "animation_name": "Remaster-Pian right",
             "fps": 24,
             "looped": false
         }
