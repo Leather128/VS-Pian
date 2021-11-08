@@ -1736,7 +1736,7 @@ class PlayState extends MusicBeatState
 						if (!daNote.isSustainNote)
 							daNote.modAngle = coolStrum.angle;
 						
-						if(coolStrum.alpha != 1)
+						if(coolStrum.alpha != 1 && daNote.isSustainNote || !daNote.isSustainNote)
 							daNote.alpha = coolStrum.alpha;
 	
 						daNote.modAngle = coolStrum.angle;
@@ -1768,7 +1768,7 @@ class PlayState extends MusicBeatState
 						if (!daNote.isSustainNote)
 							daNote.modAngle = coolStrum.angle;
 						
-						if(coolStrum.alpha != 1)
+						if(coolStrum.alpha != 1 && daNote.isSustainNote || !daNote.isSustainNote)
 							daNote.alpha = coolStrum.alpha;
 	
 						daNote.modAngle = coolStrum.angle;
