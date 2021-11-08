@@ -1,38 +1,37 @@
 {
     "defaultFlipX": true,
     "dancesLeftAndRight": false,
-    "imagePath": "Pico_FNF_assetss",
+    "imagePath": "changleremaster",
     "spritesheetType": "SPARROW",
     "barColor": [55, 158, 217],
-    "cameraOffset": [150,0],
     "animations": [
         {
             "name": "idle",
-            "animation_name": "Pico Idle Dance",
+            "animation_name": "changleremaster idle",
             "fps": 24,
             "looped": false
         },
         {
             "name": "singLEFT",
-            "animation_name": "Pico Note Right0",
+            "animation_name": "changleremaster left",
             "fps": 24,
             "looped": false
         },
         {
             "name": "singDOWN",
-            "animation_name": "Pico Down Note0",
+            "animation_name": "changleremaster down",
             "fps": 24,
             "looped": false
         },
         {
             "name": "singUP",
-            "animation_name": "pico Up note0",
+            "animation_name": "changleremaster up",
             "fps": 24,
             "looped": false
         },
         {
             "name": "singRIGHT",
-            "animation_name": "Pico NOTE LEFT0",
+            "animation_name": "changleremaster right",
             "fps": 24,
             "looped": false
         }

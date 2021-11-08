@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="changleremaster.png">
+    <SubTexture name="changleremaster idle0000" x="0" y="0" width="454" height="454" frameX="0" frameY="0" frameWidth="454" frameHeight="454" />
+    <SubTexture name="changleremaster idle0001" x="454" y="0" width="454" height="454" frameX="0" frameY="0" frameWidth="454" frameHeight="454" />
+    <SubTexture name="changleremaster idle0002" x="0" y="454" width="454" height="454" frameX="0" frameY="0" frameWidth="454" frameHeight="454" />
+    <SubTexture name="changleremaster down0000" x="454" y="454" width="454" height="454" frameX="0" frameY="0" frameWidth="454" frameHeight="454" />
+    <SubTexture name="changleremaster left0000" x="0" y="908" width="454" height="454" frameX="0" frameY="0" frameWidth="454" frameHeight="454" />
+    <SubTexture name="changleremaster right0000" x="454" y="908" width="454" height="454" frameX="0" frameY="0" frameWidth="454" frameHeight="454" />
+    <SubTexture name="changleremaster up0000" x="0" y="1362" width="454" height="454" frameX="0" frameY="0" frameWidth="454" frameHeight="454" />
+</TextureAtlas>
