@@ -553,7 +553,7 @@ class PlayState extends MusicBeatState
 
 		if (playCutsceneLmao)
 		{
-			if(SONG.cutscene != null && SONG.cutscene != "")
+			if(SONG.cutscene != null && SONG.cutscene != "" && SONG.cutscene != " ")
 			{
 				cutscene = CutsceneUtil.loadFromJson(SONG.cutscene);
 
@@ -968,10 +968,10 @@ class PlayState extends MusicBeatState
 					oldNote = null;
 
 				if(!Std.isOfType(songNotes[4], String))
-					songNotes[4] = null;
+					songNotes[4] = "default";
 
 				if(!Std.isOfType(songNotes[3], Int))
-					songNotes[3] = null;
+					songNotes[3] = 0;
 
 				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote, false, songNotes[3], songNotes[4]);
 				swagNote.sustainLength = songNotes[2];
