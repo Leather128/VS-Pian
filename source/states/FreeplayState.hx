@@ -293,15 +293,18 @@ class FreeplayState extends MusicBeatState
 	
 				trace(poop);
 	
-				PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
-				PlayState.isStoryMode = false;
-				PlayState.storyDifficulty = curDifficulty;
-				PlayState.songMultiplier = curSpeed;
-				PlayState.storyDifficultyStr = curDiffString.toUpperCase();
-	
-				PlayState.storyWeek = songs[curSelected].week;
-				trace('CUR WEEK' + PlayState.storyWeek);
-				LoadingState.loadAndSwitchState(new PlayState());
+				if(Assets.exists(Paths.json("song data/" + songs[curSelected].songName.toLowerCase() + "/" + poop, "preload")))
+				{
+					PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
+					PlayState.isStoryMode = false;
+					PlayState.storyDifficulty = curDifficulty;
+					PlayState.songMultiplier = curSpeed;
+					PlayState.storyDifficultyStr = curDiffString.toUpperCase();
+		
+					PlayState.storyWeek = songs[curSelected].week;
+					trace('CUR WEEK' + PlayState.storyWeek);
+					LoadingState.loadAndSwitchState(new PlayState());
+				}
 			}
 		}
 	}

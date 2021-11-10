@@ -5,3 +5,4 @@ Deez:dad:1:Trolling,Normal,Hard:#471700
 Bonus:dad:2:Trolling,Normal,Hard:#471700
 WTF:dad:2:Trolling,Normal,Hard:#471700
 Changle:pico:2:Trolling,Normal,Hard:#379ED9
+Plagiarism:pico:2:Trolling,Normal,Hard:#379ED9
