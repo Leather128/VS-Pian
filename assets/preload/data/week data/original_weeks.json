@@ -29,6 +29,20 @@
             ],
             "weekTitle": "iS tHaT pIaN fRoM fNf?!??!?!?!?!?!?!?!?!?!?!?!?!?",
             "backgroundColor":[249, 207, 81]
+        },
+        {
+            "imagePath": "week2",
+            "songs": [
+                "Changle",
+                "Plagiarism"
+            ],
+            "characters": [
+                "trollchangle",
+                "bf",
+                "gf"
+            ],
+            "weekTitle": ":troll:",
+            "backgroundColor":[249, 207, 81]
         }
     ]
 }

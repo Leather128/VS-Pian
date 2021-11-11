@@ -1,0 +1,9 @@
+{
+    "Animation_Name": "trolling",
+    "Animation_Looped": true,
+    "FPS": 1,
+    "Size": 0.45,
+    "Offsets": [360, 220],
+    "File_Name": "default/trollchangle",
+    "Flipped": false
+}

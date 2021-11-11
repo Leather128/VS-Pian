@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="trollchangle.png">
+	<!-- Created with visual studio code lmao -->
+	<!-- [insert visual studio code download here] -->
+	<SubTexture name="trolling0000" x="0" y="0" width="800" height="800"/>
+</TextureAtlas>
