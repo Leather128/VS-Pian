@@ -77,10 +77,11 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 				FlxG.sound.music.stop();
 
+				@:privateAccess
 				if (PlayState.isStoryMode)
 					FlxG.switchState(new StoryMenuState());
 				else
-					FlxG.switchState(new FreeplayState());
+					FlxG.switchState(new FreeplayState(PlayState.instance.goBackToLmao));
 			}
 
 			if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.curFrame == 12)

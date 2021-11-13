@@ -94,9 +94,12 @@ class Character extends FlxSprite
 
 			if(!debugMode)
 			{
-				dance();
+				if(curCharacter != "hellbob")
+				{
+					dance();
+				}
 	
-				if(isPlayer)
+				if(isPlayer && curCharacter != "hellbob")
 				{
 					// Doesn't flip for BF, since his are already in the right place???
 					if(swapLeftAndRightSingPlayer && !isDeathCharacter)
@@ -113,7 +116,7 @@ class Character extends FlxSprite
 						animOffsets.set("singLEFT", oldOffRight);
 		
 						// IF THEY HAVE MISS ANIMATIONS??
-						if (animation.getByName('singRIGHTmiss') != null)
+						if(animOffsets.exists("singRIGHTmiss"))
 						{
 							var oldOffRightMiss = animOffsets.get("singRIGHTmiss");
 							var oldOffLeftMiss = animOffsets.get("singLEFTmiss");
@@ -278,11 +281,7 @@ class Character extends FlxSprite
 		
 		var offsets:Array<String>;
 
-		#if sys
-		offsets = CoolUtil.coolTextFilePolymod(Paths.txt("character data/" + characterName + "/" + "offsets"));
-		#else
 		offsets = CoolUtil.coolTextFile(Paths.txt("character data/" + characterName + "/" + "offsets"));
-		#end
 
 		for(x in 0...offsets.length)
 		{
@@ -348,7 +347,7 @@ class Character extends FlxSprite
 					// fix for multi character stuff lmao
 					if(animation.curAnim != null)
 					{
-						if (!animation.curAnim.name.startsWith('hair'))
+						if(!animation.curAnim.name.startsWith('hair'))
 						{
 							if(!dancesLeftAndRight)
 								playAnim('idle' + altAnim);

@@ -15,16 +15,19 @@ class Boyfriend extends Character
 	{
 		if (!debugMode && animation.curAnim != null)
 		{
-			if (animation.curAnim.name.startsWith('sing'))
-				holdTimer += elapsed;
-			else
-				holdTimer = 0;
-
-			if (animation.curAnim.name.endsWith('miss') && animation.curAnim.finished && !debugMode)
-				playAnim('idle', true, false, 10);
-
-			if (animation.curAnim.name == 'firstDeath' && animation.curAnim.finished)
-				playAnim('deathLoop');
+			if(curCharacter != "hellbob")
+			{
+				if(animation.curAnim.name.startsWith('sing'))
+					holdTimer += elapsed;
+				else
+					holdTimer = 0;
+	
+				if(animation.curAnim.name.endsWith('miss') && animation.curAnim.finished && !debugMode)
+					playAnim('idle', true, false, 10);
+	
+				if(animation.curAnim.name == 'firstDeath' && animation.curAnim.finished)
+					playAnim('deathLoop');
+			}
 		}
 
 		super.update(elapsed);

@@ -6,3 +6,4 @@ Bonus:dad:2:Trolling,Normal,Hard:#471700:Main
 Changle:pico:2:Trolling,Normal,Hard:#379ED9:Main
 Plagiarism:pico:2:Trolling,Normal,Hard:#379ED9:Main
 WTF:dad:2:Trolling,Normal,Hard:#471700:Extra
+RUN FROM PIAN:dad:0:Trolling,Normal,Hard:#471700:Extra
