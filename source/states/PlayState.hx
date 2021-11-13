@@ -203,6 +203,10 @@ class PlayState extends MusicBeatState
 
 	public static var fromPauseMenu:Bool = false;
 
+	var goBackToLmao:String = "main";
+
+	public function new(?goBack:String = "main") { this.goBackToLmao = goBack; super(); }
+
 	override public function create()
 	{
 		if(FlxG.save.data.bot)
@@ -1914,7 +1918,7 @@ class PlayState extends MusicBeatState
 				trace('WENT BACK TO FREEPLAY??');
 				switchedStates = true;
 				vocals.stop();
-				FlxG.switchState(new FreeplayState());
+				FlxG.switchState(new FreeplayState(goBackToLmao));
 
 				arrow_Type_Sprites = [];
 
