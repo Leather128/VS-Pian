@@ -103,6 +103,9 @@ class TitleState extends MusicBeatState
 
 	function startIntro()
 	{
+		FlxG.save.data.oldTitle = false;
+		FlxG.save.flush();
+
 		if (!initialized)
 		{
 			var diamond:FlxGraphic = FlxGraphic.fromClass(GraphicTransTileDiamond);
@@ -121,21 +124,8 @@ class TitleState extends MusicBeatState
 			// IF THIS PR IS HERE IF ITS ACCEPTED UR GOOD TO GO
 			// https://github.com/HaxeFlixel/flixel-addons/pull/348
 
-			if (FlxG.save.data.oldTitle)
-			{
-				playTitleMusic();
-			}
-			else {
-				if (Date.now().getDay() == 5 && Date.now().getHours() >= 18 || FlxG.save.data.nightMusic)
-				{
-					playTitleMusic();
-					Conductor.changeBPM(117);
-				} else
-				{
-					playTitleMusic();
-					Conductor.changeBPM(102);
-				}
-			}
+			playTitleMusic();
+			Conductor.changeBPM(102);
 
 			FlxG.sound.music.fadeIn(4, 0, 0.7);
 
@@ -149,58 +139,22 @@ class TitleState extends MusicBeatState
 
 		var bg:FlxSprite = new FlxSprite();
 
-		FlxG.save.data.oldTitle = false;
-		FlxG.save.flush();
-
-		if (FlxG.save.data.oldTitle)
-		{
-			bg.loadGraphic(Paths.image("title/stageback"));
-			bg.antialiasing = true;
-			bg.setGraphicSize(Std.int(FlxG.width * 1.1));
-			bg.updateHitbox();
-			bg.screenCenter();
-		}
-		else
-		{
-			bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-		}
+		bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 
 		add(bg);
 
-		if (FlxG.save.data.oldTitle)
-		{
-			old_logo = new FlxSprite().loadGraphic(Paths.image('title/logo'));
-			old_logo.screenCenter();
-			old_logo.antialiasing = true;
-
-			old_logo_black = new FlxSprite().loadGraphicFromSprite(old_logo);
-			old_logo_black.screenCenter();
-			old_logo_black.color = FlxColor.BLACK;
-		}
-		else
-		{
-			logoBl = new FlxSprite(-150, -100);
+		logoBl = new FlxSprite(-150, -100);
 			
-			#if PROMOTE_LEATHER
-			if(FlxG.save.data.watermarks)
-				logoBl.frames = Paths.getSparrowAtlas('title/leatherLogoBumpin');
-			else
-			#end
-				logoBl.frames = Paths.getSparrowAtlas('title/KadeEngineLogoBumpin');
+		logoBl.frames = Paths.getSparrowAtlas('title/KadeEngineLogoBumpin');
 
-			logoBl.antialiasing = true;
-			logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
-			logoBl.animation.play('bump');
-			logoBl.updateHitbox();
-		}
+		logoBl.antialiasing = true;
+		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
+		logoBl.animation.play('bump');
+		logoBl.updateHitbox();
 
-		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
-		gfDance.frames = Paths.getSparrowAtlas('title/gfDanceTitle');
-		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
-		gfDance.antialiasing = true;
+		logoBl.screenCenter();
 
-		titleText = new FlxSprite(100, FlxG.height * 0.8);
+		titleText = new FlxSprite(150, FlxG.height * 0.8);
 		titleText.frames = Paths.getSparrowAtlas('title/titleEnter');
 		titleText.animation.addByPrefix('idle', "Press Enter to Begin", 24);
 		titleText.animation.addByPrefix('press', "ENTER PRESSED", 24);
@@ -208,21 +162,8 @@ class TitleState extends MusicBeatState
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
 
-		if (!FlxG.save.data.oldTitle)
-		{
-			add(logoBl);
-			add(gfDance);
-			add(titleText);
-		}
-
-		if (FlxG.save.data.oldTitle)
-		{
-			add(old_logo_black);
-			add(old_logo);
-
-			FlxTween.tween(old_logo_black, {y: old_logo_black.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
-			FlxTween.tween(old_logo, {y: old_logo.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG, startDelay: 0.1});
-		}
+		add(logoBl);
+		add(titleText);
 
 		credGroup = new FlxGroup();
 		add(credGroup);
@@ -369,12 +310,17 @@ class TitleState extends MusicBeatState
 		if (!FlxG.save.data.oldTitle)
 		{
 			logoBl.animation.play('bump');
+
+			logoBl.screenCenter();
+
+			/*
 			danceLeft = !danceLeft;
 	
 			if (danceLeft)
 				gfDance.animation.play('danceRight');
 			else
 				gfDance.animation.play('danceLeft');
+			*/
 	
 			switch (curBeat)
 			{

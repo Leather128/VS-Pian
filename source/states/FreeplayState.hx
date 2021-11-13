@@ -1,41 +1,23 @@
 package states;
 
+#if discord_rpc
+import utilities.Discord.DiscordClient;
+#end
+
 import lime.app.Application;
-import utilities.Ratings.SongRank;
-import openfl.utils.ByteArray;
-import modding.ModdingSound;
 import flixel.util.FlxTimer;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
 import game.Song;
 import game.Highscore;
 import utilities.CoolUtil;
 import ui.HealthIcon;
 import ui.Alphabet;
-#if discord_rpc
-import utilities.Discord.DiscordClient;
-#end
-#if sys
-import sys.thread.Thread;
-import polymod.Polymod;
-import polymod.backends.PolymodAssets;
-import sys.io.FileInput;
-import sys.FileSystem;
-import sys.io.File;
-#end
-#if cpp
-import cpp.FILE;
-#end
-import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
-import openfl.utils.Assets as OpenFLAssets;
 
 using StringTools;
 
@@ -72,6 +54,10 @@ class FreeplayState extends MusicBeatState
 	private var curDiffString:String = "normal";
 	private var curDiffArray:Array<String> = ["easy", "normal", "hard"];
 
+	public function new(?_section:String = "main") { this.section = _section; super(); }
+
+	private var section:String = "main";
+
 	override function create()
 	{
 		Application.current.window.title = Application.current.meta.get('name');
@@ -99,11 +85,7 @@ class FreeplayState extends MusicBeatState
 		songsReady = true;
 		#end
 
-		#if sys
-		var initSonglist = CoolUtil.coolTextFilePolymod(Paths.txt('freeplaySonglist'));
-		#else
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
-		#end
 
 		#if desktop
 		// Updating Discord Rich Presence
@@ -127,6 +109,8 @@ class FreeplayState extends MusicBeatState
 			var color = listArray[4];
 			var actualColor:Null<FlxColor> = null;
 
+			var songSection = listArray[5];
+
 			if(color != null)
 				actualColor = FlxColor.fromString(color);
 
@@ -134,7 +118,8 @@ class FreeplayState extends MusicBeatState
 				diffs = diffsStr.split(",");
 
 			// Creates new song data accordingly
-			songs.push(new SongMetadata(song, week, icon, diffs, actualColor));
+			if(section.toLowerCase() == songSection.toLowerCase())
+				songs.push(new SongMetadata(song, week, icon, diffs, actualColor));
 		}
 
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
@@ -281,11 +266,7 @@ class FreeplayState extends MusicBeatState
 				curSpeed = 1;
 	
 			if (controls.BACK)
-			{
-				//FlxG.sound.music.stop();
-				//FlxG.sound.music.destroy();
-				FlxG.switchState(new MainMenuState());
-			}
+				FlxG.switchState(new FreeplayChooser());
 
 			if (accepted)
 			{
