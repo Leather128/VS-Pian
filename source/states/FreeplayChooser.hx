@@ -122,7 +122,7 @@ class FreeplayChooser extends MusicBeatState
 
             camFollow.setPosition(sectionGroup.members[selected].getGraphicMidpoint().x - 150, sectionGroup.members[selected].getGraphicMidpoint().y - 200);
 
-            FlxG.sound.play(Paths.sound('scrollMenu'));
+            FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
         }
 
         if(controls.ACCEPT)
