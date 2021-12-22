@@ -7,7 +7,6 @@ import lime.tools.AssetType;
 #if sys
 import modding.ModdingSound;
 import sys.FileSystem;
-import polymod.fs.PolymodFileSystem;
 #end
 #if polymod
 import polymod.backends.PolymodAssets;
